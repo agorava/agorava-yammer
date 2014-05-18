@@ -15,8 +15,8 @@
  */
 package org.agorava.yammer.impl;
 
-import org.springframework.social.yammer.api.MessageInfo;
-import org.springframework.social.yammer.api.MessageOperations;
+import org.agorava.yammer.model.MessageInfo;
+import org.agorava.yammer.model.MessageOperations;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;

@@ -56,7 +56,7 @@ public class GroupTemplate extends AbstractYammerOperations implements GroupOper
 	}
 
 	/* (non-Javadoc)
-	 * @see org.springframework.social.yammer.api.GroupOperations#createGroup(java.lang.String, boolean)
+	 * @see org.agorava.yammer.model.GroupOperations#createGroup(java.lang.String, boolean)
 	 */
 	public void createGroup(String name, boolean isPrivate) {
 		Map<String, String> params = new FastHashMap<String, String>();

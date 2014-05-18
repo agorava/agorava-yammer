@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.agorava.yammer.model.UserOperations;
 import org.agorava.yammer.model.YammerProfile;
+import org.agorava.yammer.model.YammerProfileList;
 
 /**
  * 

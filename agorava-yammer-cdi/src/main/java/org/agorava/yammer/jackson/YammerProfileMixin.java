@@ -20,12 +20,12 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.social.yammer.api.YammerProfile.Contact;
-import org.springframework.social.yammer.api.YammerProfile.EMail;
-import org.springframework.social.yammer.api.YammerProfile.InstantMessaging;
-import org.springframework.social.yammer.api.YammerProfile.Phone;
-import org.springframework.social.yammer.api.YammerProfile.School;
-import org.springframework.social.yammer.api.YammerProfile.Stats;
+import org.agorava.yammer.model.YammerProfile.Contact;
+import org.agorava.yammer.model.YammerProfile.EMail;
+import org.agorava.yammer.model.YammerProfile.InstantMessaging;
+import org.agorava.yammer.model.YammerProfile.Phone;
+import org.agorava.yammer.model.YammerProfile.School;
+import org.agorava.yammer.model.YammerProfile.Stats;
 
 /**
  * @author Morten Andersen-Gott

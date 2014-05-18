@@ -21,22 +21,22 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
-import org.springframework.social.yammer.api.GroupOperations;
-import org.springframework.social.yammer.api.MessageOperations;
-import org.springframework.social.yammer.api.SearchOperations;
-import org.springframework.social.yammer.api.SubscriptionOperations;
-import org.springframework.social.yammer.api.ThreadOperations;
-import org.springframework.social.yammer.api.TopicOperations;
-import org.springframework.social.yammer.api.UserOperations;
-import org.springframework.social.yammer.api.Yammer;
-import org.springframework.social.yammer.api.impl.json.YammerModule;
+import org.agorava.yammer.model.GroupOperations;
+import org.agorava.yammer.model.MessageOperations;
+import org.agorava.yammer.model.SearchOperations;
+import org.agorava.yammer.model.SubscriptionOperations;
+import org.agorava.yammer.model.ThreadOperations;
+import org.agorava.yammer.model.TopicOperations;
+import org.agorava.yammer.model.UserOperations;
+import org.agorava.yammer.model.YammerOperations;
+import org.agorava.yammer.model.impl.json.YammerModule;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Morten Andersen-Gott
  *
  */
-public class YammerTemplate extends AbstractOAuth2ApiBinding implements Yammer{
+public class YammerTemplate extends AbstractOAuth2ApiBinding implements YammerOperations{
 	
 	private UserOperations userOperations;
 	private MessageOperations messageOperations;

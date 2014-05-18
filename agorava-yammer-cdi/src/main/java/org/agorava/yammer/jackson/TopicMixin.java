@@ -20,7 +20,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.social.yammer.api.Topic.TopicExpert;
+import org.agorava.yammer.model.Topic.TopicExpert;
 
 /**
  * @author Morten Andersen-Gott

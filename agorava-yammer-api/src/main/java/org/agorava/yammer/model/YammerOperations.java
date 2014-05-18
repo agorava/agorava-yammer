@@ -1,6 +1,6 @@
 package org.agorava.yammer.model;
 
-public interface Yammer{
+public interface YammerOperations {
 
 	/**
 	 * Returns the portion of the API containing the Thread operations

@@ -18,7 +18,7 @@ package org.agorava.yammer.impl;
 import java.net.URI;
 
 import org.springframework.social.ResourceNotFoundException;
-import org.springframework.social.yammer.api.SubscriptionOperations;
+import org.agorava.yammer.model.SubscriptionOperations;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;

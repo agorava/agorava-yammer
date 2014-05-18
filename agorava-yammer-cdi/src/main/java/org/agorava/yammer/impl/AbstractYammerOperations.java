@@ -19,7 +19,6 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.social.support.URIBuilder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
@@ -42,7 +41,7 @@ public class AbstractYammerOperations {
 	}
 	
 	protected URI buildUri(String path, MultiValueMap<String, String> parameters) {
-		return URIBuilder.fromUri(API_URL_BASE + path).queryParams(parameters).build();
+		return UriBuilder.fromUri(API_URL_BASE + path).queryParams(parameters).build();
 	}
 	
 	private static final String API_URL_BASE = "https://www.yammer.com/api/v1/";

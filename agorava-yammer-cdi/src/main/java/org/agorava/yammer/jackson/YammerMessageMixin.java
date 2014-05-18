@@ -21,16 +21,18 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
-import org.springframework.social.yammer.api.YammerMessage.Attachment;
-import org.springframework.social.yammer.api.YammerMessage.Body;
-import org.springframework.social.yammer.api.YammerMessage.LikedBy;
-import org.springframework.social.yammer.api.YammerMessage.Attachment.File;
-import org.springframework.social.yammer.api.YammerMessage.Attachment.Image;
-import org.springframework.social.yammer.api.YammerMessage.LikedBy.Name;
-import org.springframework.social.yammer.api.impl.YammerDateDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import org.agorava.yammer.model.YammerMessage.Attachment;
+import org.agorava.yammer.model.YammerMessage.Body;
+import org.agorava.yammer.model.YammerMessage.LikedBy;
+import org.agorava.yammer.model.YammerMessage.Attachment.File;
+import org.agorava.yammer.model.YammerMessage.Attachment.Image;
+import org.agorava.yammer.model.YammerMessage.LikedBy.Name;
+import org.agorava.yammer.impl.YammerDateDeserializer;
 
 /**
+ * @author Werner Keil
  * @author Morten Andersen-Gott
  *
  */

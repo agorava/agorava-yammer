@@ -16,10 +16,10 @@
 package org.agorava.yammer;
 
 import org.springframework.social.connect.support.OAuth2ConnectionFactory;
-import org.springframework.social.yammer.api.Yammer;
+import org.agorava.yammer.model.YammerOperations;
 
 
-public class YammerConnectionFactory extends OAuth2ConnectionFactory<Yammer> {
+public class YammerConnectionFactory extends OAuth2ConnectionFactory<YammerOperations> {
 
 	public YammerConnectionFactory(String clientId, String clientSecret) {
 		super("yammer", new YammerServiceProvider(clientId, clientSecret), new YammerAdapter());

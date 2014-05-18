@@ -21,16 +21,16 @@ import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
-import org.springframework.social.yammer.api.Yammer;
-import org.springframework.social.yammer.api.YammerProfile;
+import org.agorava.yammer.model.YammerOperations;
+import org.agorava.yammer.model.YammerProfile;
 import org.springframework.web.client.RestClientException;
 
 
-public class YammerAdapter implements ApiAdapter<Yammer> {
+public class YammerAdapter implements ApiAdapter<YammerOperations> {
 
     public static final String EMAIL_PRIMARY_TYPE = "primary";
 
-    public boolean test(Yammer yammer) {
+    public boolean test(YammerOperations yammer) {
         try {
             yammer.userOperations().getUserProfile();
             return true;
@@ -39,7 +39,7 @@ public class YammerAdapter implements ApiAdapter<Yammer> {
         }
     }
 
-    public void setConnectionValues(Yammer yammer, ConnectionValues values) {
+    public void setConnectionValues(YammerOperations yammer, ConnectionValues values) {
         YammerProfile profile = yammer.userOperations().getUserProfile();
         String providerUserId = String.valueOf(profile.getId());
         values.setProviderUserId(providerUserId);
@@ -48,7 +48,7 @@ public class YammerAdapter implements ApiAdapter<Yammer> {
         values.setImageUrl(profile.getMugshotUrl());
     }
 
-    public UserProfile fetchUserProfile(Yammer yammer) {
+    public UserProfile fetchUserProfile(YammerOperations yammer) {
         YammerProfile profile = yammer.userOperations().getUserProfile();
 
         String primaryMail = getEMail(profile);
@@ -70,7 +70,7 @@ public class YammerAdapter implements ApiAdapter<Yammer> {
         return fallbackEMail.getAddress();
     }
 
-    public void updateStatus(Yammer yammer, String message) {
+    public void updateStatus(YammerOperations yammer, String message) {
         yammer.messageOperations().postUpdate(message);
     }
 

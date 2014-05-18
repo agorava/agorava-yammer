@@ -15,8 +15,8 @@
  */
 package org.agorava.yammer.impl;
 
-import org.springframework.social.yammer.api.ThreadOperations;
-import org.springframework.social.yammer.api.YammerThread;
+import org.agorava.yammer.model.ThreadOperations;
+import org.agorava.yammer.model.YammerThread;
 import org.springframework.web.client.RestTemplate;
 
 /**

@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl;
+package org.agorava.yammer.model;
 
 import java.util.ArrayList;
 
-import org.springframework.social.yammer.api.YammerProfile;
 
 /**
+ * @author Werner Keil
  * @author Morten Andersen-Gott
  *
  */

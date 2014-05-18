@@ -20,13 +20,14 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.social.yammer.api.Group;
-import org.springframework.social.yammer.api.MessageInfo;
-import org.springframework.social.yammer.api.SearchResults.SearchStats;
-import org.springframework.social.yammer.api.Topic;
-import org.springframework.social.yammer.api.YammerProfile;
+import org.agorava.yammer.model.Group;
+import org.agorava.yammer.model.MessageInfo;
+import org.agorava.yammer.model.SearchResults.SearchStats;
+import org.agorava.yammer.model.Topic;
+import org.agorava.yammer.model.YammerProfile;
 
 /**
+ * @author Werner Keil
  * @author Morten Andersen-Gott
  *
  */

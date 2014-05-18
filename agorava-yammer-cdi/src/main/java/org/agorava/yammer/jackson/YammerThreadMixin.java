@@ -21,12 +21,14 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
-import org.springframework.social.yammer.api.Topic;
-import org.springframework.social.yammer.api.YammerThread.ThreadStats;
-import org.springframework.social.yammer.api.impl.YammerDateDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import org.agorava.yammer.impl.YammerDateDeserializer;
+import org.agorava.yammer.model.Topic;
+import org.agorava.yammer.model.YammerThread.ThreadStats;
 
 /**
+ * @author Werner Keil
  * @author Morten Andersen-Gott
  *
  */
