@@ -27,10 +27,10 @@
     <artifactId>agorava-yammer-parent</artifactId>
     <packaging>pom</packaging>
 
-    <!-- modules>
-        <module>agorava-instagram-api</module>
-        <module>agorava-instagram-cdi</module>
-    </modules -->
+    <modules>
+    	<module>agorava-yammer-api</module>
+    	<!--  >module>agorava-yammer-cdi</module -->
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -41,16 +41,16 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-            <!-- dependency>
-                <groupId>org.agorava</groupId>
-                <artifactId>agorava-instagram-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.agorava</groupId>
-                <artifactId>agorava-instagram-cdi</artifactId>
-                <version>${project.version}</version>
-            </dependency -->
+    		<dependency>
+				<groupId>org.agorava</groupId>
+				<artifactId>agorava-yammer-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.agorava</groupId>
+				<artifactId>agorava-yammer-cdi</artifactId>
+				<version>${project.version}</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 </project>
