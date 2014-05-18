@@ -27,7 +27,7 @@ import javax.inject.Inject;
  */
 public abstract class YammerBaseService extends ProviderApiService {
 
-    public static String API_ROOT = "https://api.github.com/";
+    public static String API_ROOT = "https://www.yammer.com/api/v1/";
 
     @Inject
     @Yammer

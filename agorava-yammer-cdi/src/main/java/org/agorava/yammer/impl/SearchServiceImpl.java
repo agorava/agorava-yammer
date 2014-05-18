@@ -15,7 +15,7 @@
  */
 package org.agorava.yammer.impl;
 
-import org.agorava.yammer.model.SearchOperations;
+import org.agorava.yammer.SearchService;
 import org.agorava.yammer.model.SearchResults;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -25,11 +25,11 @@ import org.springframework.web.client.RestTemplate;
  * @author Morten Andersen-Gott
  *
  */
-public class SearchTemplate extends AbstractYammerOperations implements SearchOperations {
+public class SearchServiceImpl extends AbstractYammerOperations implements SearchService {
 
 	private RestTemplate restTemplate;
 	
-	public SearchTemplate(RestTemplate restTemplate) {
+	public SearchServiceImpl(RestTemplate restTemplate) {
 		this.restTemplate=restTemplate;
 	}
 	

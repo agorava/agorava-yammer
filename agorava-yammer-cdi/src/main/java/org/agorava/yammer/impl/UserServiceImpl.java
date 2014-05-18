@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.agorava.yammer.model.UserOperations;
+import org.agorava.yammer.UserService;
 import org.agorava.yammer.model.YammerProfile;
 import org.agorava.yammer.model.YammerProfileList;
 
@@ -29,14 +29,14 @@ import org.agorava.yammer.model.YammerProfileList;
  * @author Morten Andersen-Gott
  *
  */
-public class UserTemplate extends AbstractYammerOperations implements UserOperations{
+public class UserServiceImpl extends AbstractYammerOperations implements UserService{
 
 	private RestTemplate restTemplate;
 	
 	/**
 	 * @param restTemplate
 	 */
-	public UserTemplate(RestTemplate restTemplate) {
+	public UserServiceImpl(RestTemplate restTemplate) {
 		this.restTemplate=restTemplate;
 	}
 	

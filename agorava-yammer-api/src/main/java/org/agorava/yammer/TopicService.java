@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer;
+
+import org.agorava.yammer.model.Topic;
 
 
 /**
- * Sub-API for Thread operations
+ * Service-API for topic operations
  * @author Morten Andersen-Gott
  *
  */
-public interface ThreadOperations {
+public interface TopicService {
 
 	/**
-	 * Get information about a thread
-	 * @param id the thread id
-	 * @return {@link YammerThread}
+	 * Get information about a topic
+	 * @param id topic id
+	 * @return {@link Topic}
 	 */
-	YammerThread getThread(long id);
+	Topic getTopic(long id);
 	
 }

@@ -21,10 +21,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
+import org.agorava.yammer.MessageService;
+
 /**
  * Details beyond the message, used when posting to yammer. Differs from
  * {@link YammerMessage} which is the type returned when submitting a posting or
- * when polling for messages with any of the get-methods in {@link MessageOperations}
+ * when polling for messages with any of the get-methods in {@link MessageService}
  * 
  * @see YammerMessage
  * 

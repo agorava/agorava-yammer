@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer;
 
 
 /**
- * Sub-API for subscriptions (following/unfollowing).
+ * Service-API for subscriptions (following/unfollowing).
  * @author Morten Andersen-Gott
  *
  */
-public interface SubscriptionOperations {
+public interface SubscriptionService {
 
 	/**
 	 * Follow a user with the given id

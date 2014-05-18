@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer;
+
+import org.agorava.yammer.model.SearchResults;
 
 
 /**
- * Sub-API for search operations
+ * Service-API for search operations
  * @author Morten Andersen-Gott
  *
  */
-public interface SearchOperations {
+public interface SearchService {
 
 	/**
 	 * Search among messages, users, tags and groups for the given string

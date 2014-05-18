@@ -21,62 +21,62 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
-import org.agorava.yammer.model.GroupOperations;
-import org.agorava.yammer.model.MessageOperations;
-import org.agorava.yammer.model.SearchOperations;
-import org.agorava.yammer.model.SubscriptionOperations;
-import org.agorava.yammer.model.ThreadOperations;
-import org.agorava.yammer.model.TopicOperations;
-import org.agorava.yammer.model.UserOperations;
-import org.agorava.yammer.model.YammerOperations;
-import org.agorava.yammer.model.impl.json.YammerModule;
+import org.agorava.yammer.GroupService;
+import org.agorava.yammer.MessageService;
+import org.agorava.yammer.SearchService;
+import org.agorava.yammer.SubscriptionService;
+import org.agorava.yammer.ThreadService;
+import org.agorava.yammer.TopicService;
+import org.agorava.yammer.UserService;
+import org.agorava.yammer.YammerService;
+import org.agorava.yammer.jackson.YammerModule;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Morten Andersen-Gott
  *
  */
-public class YammerTemplate extends AbstractOAuth2ApiBinding implements YammerOperations{
+public class YammerServiceImpl extends AbstractOAuth2ApiBinding implements YammerService{
 	
-	private UserOperations userOperations;
-	private MessageOperations messageOperations;
-	private GroupOperations groupOperations;
-	private SearchOperations searchOperations;
-	private TopicOperations topicOperations;
-	private SubscriptionOperations subscriptionOperations;
-	private ThreadOperations threadOperations;
+	private UserService userOperations;
+	private MessageService messageOperations;
+	private GroupService groupOperations;
+	private SearchService searchOperations;
+	private TopicService topicOperations;
+	private SubscriptionService subscriptionOperations;
+	private ThreadService threadOperations;
 	
-	public YammerTemplate(String accessToken) {
+	public YammerServiceImpl(String accessToken) {
 		super(accessToken);
 		initSubApis();
 		registerYammerJsonModule();
 	}
 
-	public UserOperations userOperations(){
+	public UserService userOperations(){
 		return userOperations;
 	}
 	
-	public MessageOperations messageOperations(){
+	public MessageService messageOperations(){
 		return messageOperations;
 	}
 	
-	public GroupOperations groupOperations(){
+	public GroupService groupOperations(){
 		return groupOperations;
 	}
 	
-	public SearchOperations searchOperations(){
+	public SearchService searchOperations(){
 		return searchOperations;
 	}
 	
-	public TopicOperations topicOperations(){
+	public TopicService topicOperations(){
 		return topicOperations;
 	}
 	
-	public SubscriptionOperations subscriptionOperations(){
+	public SubscriptionService subscriptionOperations(){
 		return subscriptionOperations;
 	}
 	
-	public ThreadOperations threadOperations(){
+	public ThreadService threadOperations(){
 		return threadOperations;
 	}
 	
@@ -86,13 +86,13 @@ public class YammerTemplate extends AbstractOAuth2ApiBinding implements YammerOp
 	}
 	
 	private void initSubApis() {
-		userOperations = new UserTemplate(getRestTemplate());
-		messageOperations = new MessageTemplate(getRestTemplate());
-		groupOperations = new GroupTemplate(getRestTemplate());
-		searchOperations = new SearchTemplate(getRestTemplate());
-		topicOperations = new TopicTemplate(getRestTemplate());
-		subscriptionOperations = new SubscriptionTemplate(getRestTemplate());
-		threadOperations = new ThreadTemplate(getRestTemplate());
+		userOperations = new UserServiceImpl(getRestTemplate());
+		messageOperations = new MessageServiceImpl(getRestTemplate());
+		groupOperations = new GroupServiceImpl(getRestTemplate());
+		searchOperations = new SearchServiceImpl(getRestTemplate());
+		topicOperations = new TopicServiceImpl(getRestTemplate());
+		subscriptionOperations = new SubscriptionServiceImpl(getRestTemplate());
+		threadOperations = new ThreadServiceImpl(getRestTemplate());
 	}
 	
 	private void registerYammerJsonModule() {

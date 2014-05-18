@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer;
 
 import java.util.List;
 
+import org.agorava.yammer.model.Group;
+
 /**
- * Sub-API for all Group related methods
+ * Service-API for all Group related methods
  * @author Werner Keil
  * @author Morten Andersen-Gott
  * 
  */
-public interface GroupOperations {
+public interface GroupService {
 
 	/**
 	 * Convenience constant for sorting by privacy

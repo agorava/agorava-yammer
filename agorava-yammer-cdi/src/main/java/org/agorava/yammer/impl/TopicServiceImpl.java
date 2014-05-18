@@ -13,16 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer;
+package org.agorava.yammer.impl;
 
-import org.springframework.social.connect.support.OAuth2ConnectionFactory;
-import org.agorava.yammer.model.YammerOperations;
+import org.agorava.yammer.TopicService;
+import org.agorava.yammer.model.Topic;
+import org.springframework.web.client.RestTemplate;
 
+/**
+ * @author Morten Andersen-Gott
+ *
+ */
+public class TopicServiceImpl extends AbstractYammerOperations implements TopicService {
 
-public class YammerConnectionFactory extends OAuth2ConnectionFactory<YammerOperations> {
+	private RestTemplate restTemplate;
 
-	public YammerConnectionFactory(String clientId, String clientSecret) {
-		super("yammer", new YammerServiceProvider(clientId, clientSecret), new YammerAdapter());
+	public TopicServiceImpl(RestTemplate restTemplate){
+		this.restTemplate = restTemplate;
+	}
+	
+	public Topic getTopic(long id) {
+		return restTemplate.getForObject(buildUri("topics/"+String.valueOf(id)+".json"), Topic.class);
 	}
 
 }

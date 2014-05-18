@@ -23,7 +23,7 @@ import org.agorava.api.service.Preconditions;
 import org.agorava.spi.ProviderConfigOauth20;
 
 @Yammer
-public class YammerOAuth2Api extends ProviderConfigOauth20 {
+public class YammerApi extends ProviderConfigOauth20 {
     private static final String AUTHORIZE_URL = "https://www.yammer.com/dialog/oauth";
 //    private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 

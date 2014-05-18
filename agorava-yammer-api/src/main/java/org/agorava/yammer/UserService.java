@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer;
 
 import java.util.List;
 
+import org.agorava.yammer.model.UserInfo;
+import org.agorava.yammer.model.YammerProfile;
+
 /**
- * Sub-API for User related operations
+ * Service-API for User related operations
  * @author Morten Andersen-Gott
  *
  */
-public interface UserOperations {
+public interface UserService {
 
 	/**
 	 * Convenience constant for sorting by messages

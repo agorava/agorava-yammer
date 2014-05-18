@@ -13,26 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl;
+package org.agorava.yammer;
 
-import org.agorava.yammer.model.ThreadOperations;
 import org.agorava.yammer.model.YammerThread;
-import org.springframework.web.client.RestTemplate;
+
 
 /**
+ * Service-API for Threads
+ * @author Werner Keil
  * @author Morten Andersen-Gott
  *
  */
-public class ThreadTemplate extends AbstractYammerOperations implements ThreadOperations {
+public interface ThreadService {
 
-	private RestTemplate restTemplate;
-
-	public ThreadTemplate(RestTemplate restTemplate){
-		this.restTemplate = restTemplate;
-	}
+	/**
+	 * Get information about a thread
+	 * @param id the thread id
+	 * @return {@link YammerThread}
+	 */
+	YammerThread getThread(long id);
 	
-	public YammerThread getThread(long id) {
-		return restTemplate.getForObject(buildUri("threads/"+id+".json"), YammerThread.class);
-	}
-
 }

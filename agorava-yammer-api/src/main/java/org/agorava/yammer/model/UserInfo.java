@@ -18,14 +18,15 @@ package org.agorava.yammer.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import java.util.HashMap;
+
+import org.agorava.yammer.UserService;
 
 /**
  * Represents a user when doing an update
  * @author Morten Andersen-Gott
  * @author Werner Keil
- * @see UserOperations#updateProfile(long, UserInfo)
+ * @see UserService#updateProfile(long, UserInfo)
  * 
  */
 public class UserInfo {

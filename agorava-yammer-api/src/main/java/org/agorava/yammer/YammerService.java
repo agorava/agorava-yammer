@@ -1,40 +1,41 @@
-package org.agorava.yammer.model;
+package org.agorava.yammer;
 
-public interface YammerOperations {
+
+public interface YammerService {
 
 	/**
 	 * Returns the portion of the API containing the Thread operations
 	 */
-	ThreadOperations threadOperations();
+	ThreadService threadOperations();
 
 	/**
 	 * Returns the portion of the API containing the Subscription (follow) operations
 	 */
-	SubscriptionOperations subscriptionOperations();
+	SubscriptionService subscriptionOperations();
 
 	/**
 	 * Returns the portion of the API containing the Topic (tags) operations
 	 */
-	TopicOperations topicOperations();
+	TopicService topicOperations();
 
 	/**
 	 * Returns the portion of the API containing the Search operations
 	 */
-	SearchOperations searchOperations();
+	SearchService searchOperations();
 
 	/**
 	 * Returns the portion of the API containing the Group operations
 	 */
-	GroupOperations groupOperations();
+	GroupService groupOperations();
 
 	/**
 	 * Returns the portion of the API containing the Message operations
 	 */
-	MessageOperations messageOperations();
+	MessageService messageOperations();
 
 	/**
 	 * Returns the portion of the API containing the User operations
 	 */
-	UserOperations userOperations();
+	UserService userOperations();
 
 }

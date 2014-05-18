@@ -277,7 +277,7 @@ public class YammerMessage {
 
             /**
              * @return the user userId for the yammer user associated with the name
-             * @see org.springframework.social.yammer.api.YammerProfile#getId()
+             * @see org.agorava.yammer.model.YammerProfile#getId()
              */
             public long getUserId() {
                 return userId;

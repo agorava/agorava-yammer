@@ -13,26 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl;
+package org.agorava.yammer;
 
-import org.agorava.yammer.model.Topic;
-import org.agorava.yammer.model.TopicOperations;
-import org.springframework.web.client.RestTemplate;
+import javax.enterprise.util.AnnotationLiteral;
 
 /**
- * @author Morten Andersen-Gott
- *
+ * @author Werner Keil
+ * 
  */
-public class TopicTemplate extends AbstractYammerOperations implements TopicOperations {
+public class YammerLiteral extends AnnotationLiteral<Yammer> implements Yammer {
 
-	private RestTemplate restTemplate;
-
-	public TopicTemplate(RestTemplate restTemplate){
-		this.restTemplate = restTemplate;
-	}
-	
-	public Topic getTopic(long id) {
-		return restTemplate.getForObject(buildUri("topics/"+String.valueOf(id)+".json"), Topic.class);
-	}
+    private static final long serialVersionUID = 6670724512843515808L;
+    public static Yammer INSTANCE = new YammerLiteral();
 
 }

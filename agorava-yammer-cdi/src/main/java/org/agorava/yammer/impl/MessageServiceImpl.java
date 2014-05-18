@@ -15,8 +15,8 @@
  */
 package org.agorava.yammer.impl;
 
+import org.agorava.yammer.MessageService;
 import org.agorava.yammer.model.MessageInfo;
-import org.agorava.yammer.model.MessageOperations;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -25,14 +25,14 @@ import org.springframework.web.client.RestTemplate;
  * @author Morten Andersen-Gott
  *
  */
-public class MessageTemplate extends AbstractYammerOperations implements MessageOperations {
+public class MessageServiceImpl extends AbstractYammerOperations implements MessageService {
 
 	private RestTemplate restTemplate;
 	
 	/**
 	 * @param restTemplate
 	 */
-	public MessageTemplate(RestTemplate restTemplate) {
+	public MessageServiceImpl(RestTemplate restTemplate) {
 		this.restTemplate=restTemplate;
 	}
 

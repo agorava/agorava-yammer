@@ -13,15 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer;
+
+import org.agorava.yammer.model.MessageInfo;
+import org.agorava.yammer.model.YammerPostDetails;
 
 
 /**
- * Sub-API for all message related operations
+ * Service-API for all message related operations
  * @author Morten Andersen-Gott
  * 
  */
-public interface MessageOperations {
+public interface MessageService {
 
 	/**
 	 * Convenience constant for viewing messages by thread. Will return first

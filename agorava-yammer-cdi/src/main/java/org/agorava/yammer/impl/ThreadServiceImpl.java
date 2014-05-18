@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.model;
+package org.agorava.yammer.impl;
 
+import org.agorava.yammer.ThreadService;
+import org.agorava.yammer.model.YammerThread;
+import org.springframework.web.client.RestTemplate;
 
 /**
- * Sub-API for topic operations
  * @author Morten Andersen-Gott
  *
  */
-public interface TopicOperations {
+public class ThreadServiceImpl extends AbstractYammerOperations implements ThreadService {
 
-	/**
-	 * Get information about a topic
-	 * @param id topic id
-	 * @return {@link Topic}
-	 */
-	Topic getTopic(long id);
+	private RestTemplate restTemplate;
+
+	public ThreadServiceImpl(RestTemplate restTemplate){
+		this.restTemplate = restTemplate;
+	}
 	
+	public YammerThread getThread(long id) {
+		return restTemplate.getForObject(buildUri("threads/"+id+".json"), YammerThread.class);
+	}
+
 }
