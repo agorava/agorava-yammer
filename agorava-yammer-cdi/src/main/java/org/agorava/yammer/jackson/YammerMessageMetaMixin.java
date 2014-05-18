@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,31 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl.jackson;
+package org.agorava.yammer.jackson;
 
 import java.util.List;
-
-import org.agorava.yammer.model.YammerMessage;
-import org.agorava.yammer.model.YammerMessageMeta;
-import org.agorava.yammer.model.YammerReference;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @author Werner Keil
  * @author Morten Andersen-Gott
  *
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
-abstract class MessageInfoMixin {
+abstract class YammerMessageMetaMixin {
 
 	@JsonCreator
-	public MessageInfoMixin(
-		@JsonProperty("messages") List<YammerMessage> messages,
-		@JsonProperty("meta") YammerMessageMeta metadata,
-		@JsonProperty("references") List<YammerReference> references
-	) {}
+	public YammerMessageMetaMixin(
+			@JsonProperty("current_user_id")long currentUserId, 
+			@JsonProperty("feed_name")String feedName, 
+			@JsonProperty("feed_desc")String feedDescription,
+			@JsonProperty("unsee_message_count_following")int unseenMessageCountFollowing, 
+			@JsonProperty("unseen_message_count_received")int unseenMessageCountReceived, 
+			@JsonProperty("liked_message_ids")List<Long> likedMessageIds,
+			@JsonProperty("favorite_message_ids")List<Long> favoriteMessageIds, 
+			@JsonProperty("followed_user_id")List<Long> followedUserIds, 
+			@JsonProperty("bookmarked_message_ids")List<Long> bookmarkedMessageIds) {}
 	
 }

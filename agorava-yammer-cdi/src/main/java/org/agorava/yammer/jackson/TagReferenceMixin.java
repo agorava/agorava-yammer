@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl;
+package org.agorava.yammer.jackson;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.agorava.yammer.model.Group;
+@JsonIgnoreProperties(ignoreUnknown = true)
+abstract class TagReferenceMixin {
 
-/**
- * @author Werner Keil
- * @author Morten Andersen-Gott
- *
- */
-@SuppressWarnings("serial")
-public class GroupList extends ArrayList<Group>{
-
+	@JsonCreator
+	public TagReferenceMixin(
+			@JsonProperty("id") long id, 
+			@JsonProperty("url")String url, 
+			@JsonProperty("web_url")String webUrl,
+			@JsonProperty("name")String name
+			) {	}
+	
 }

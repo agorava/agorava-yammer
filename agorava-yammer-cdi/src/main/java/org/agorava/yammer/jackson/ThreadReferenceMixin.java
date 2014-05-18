@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl.jackson;
+package org.agorava.yammer.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.social.yammer.api.YammerThread.ThreadStats;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class MessageReferenceMixin {
-
+@JsonIgnoreProperties(ignoreUnknown=true)
+abstract class ThreadReferenceMixin {
+	
 	@JsonCreator
-	public MessageReferenceMixin(
+	public ThreadReferenceMixin(
 			@JsonProperty("id") long id, 
 			@JsonProperty("url")String url, 
 			@JsonProperty("web_url")String webUrl
 			) {	}
 	
+	@JsonProperty("thread_starter_id")
+	long threadStarterId;
+	@JsonProperty("stats")
+	ThreadStats stats;
+	@JsonProperty("direct_message")
+	boolean directMessage;
 	
 }

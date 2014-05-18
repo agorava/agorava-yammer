@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,33 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl.jackson;
+package org.agorava.yammer.jackson;
+
+import java.util.List;
+
+import org.agorava.yammer.model.YammerMessage;
+import org.agorava.yammer.model.YammerMessageMeta;
+import org.agorava.yammer.model.YammerReference;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.social.yammer.api.YammerProfile;
 
+/**
+ * @author Werner Keil
+ * @author Morten Andersen-Gott
+ *
+ */
 @JsonIgnoreProperties(ignoreUnknown=true)
-abstract class UserReferenceMixin {
+abstract class MessageInfoMixin {
 
 	@JsonCreator
-	public UserReferenceMixin(
-			@JsonProperty("id") long id, 
-			@JsonProperty("url")String url, 
-			@JsonProperty("web_url")String webUrl,
-			@JsonProperty("name")String name
-			) {	}
-
-	@JsonProperty("mugshot_url")
-	String mugshotUrl;
+	public MessageInfoMixin(
+		@JsonProperty("messages") List<YammerMessage> messages,
+		@JsonProperty("meta") YammerMessageMeta metadata,
+		@JsonProperty("references") List<YammerReference> references
+	) {}
 	
-	@JsonProperty("stats")
-	YammerProfile.Stats userStats;
-	
-	@JsonProperty("fullName")
-	String fullName;
-	
-	@JsonProperty("job_title")
-	String title;
 }

@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl.jackson;
+package org.agorava.yammer.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class TagReferenceMixin {
+/**
+ * @author Werner Keil
+ * @author Morten Andersen-Gott
+ *
+ */
+@SuppressWarnings("serial")
+public class GroupList extends ArrayList<Group>{
 
-	@JsonCreator
-	public TagReferenceMixin(
-			@JsonProperty("id") long id, 
-			@JsonProperty("url")String url, 
-			@JsonProperty("web_url")String webUrl,
-			@JsonProperty("name")String name
-			) {	}
-	
 }

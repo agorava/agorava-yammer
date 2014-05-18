@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.agorava.yammer.model.Group;
+import org.agorava.yammer.model.GroupList;
 import org.agorava.yammer.model.GroupOperations;
+
 import java.util.Map;
+
 import org.springframework.web.client.RestTemplate;
 
 /**

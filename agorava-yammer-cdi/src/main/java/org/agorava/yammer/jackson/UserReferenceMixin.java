@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,30 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.yammer.impl.jackson;
+package org.agorava.yammer.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.social.yammer.api.YammerProfile;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class GroupReferenceMixin {
+@JsonIgnoreProperties(ignoreUnknown=true)
+abstract class UserReferenceMixin {
 
 	@JsonCreator
-	public GroupReferenceMixin(
+	public UserReferenceMixin(
 			@JsonProperty("id") long id, 
 			@JsonProperty("url")String url, 
 			@JsonProperty("web_url")String webUrl,
 			@JsonProperty("name")String name
 			) {	}
-	
-	@JsonProperty("full_name")
-	String fullName;
-	
-	@JsonProperty("description")
-	String description;
-	
+
 	@JsonProperty("mugshot_url")
 	String mugshotUrl;
 	
+	@JsonProperty("stats")
+	YammerProfile.Stats userStats;
+	
+	@JsonProperty("fullName")
+	String fullName;
+	
+	@JsonProperty("job_title")
+	String title;
 }
