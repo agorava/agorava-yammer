@@ -17,7 +17,6 @@ package org.agorava.yammer.impl;
 
 import java.util.List;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
@@ -30,7 +29,8 @@ import org.agorava.yammer.TopicService;
 import org.agorava.yammer.UserService;
 import org.agorava.yammer.YammerService;
 import org.agorava.yammer.jackson.YammerModule;
-import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Morten Andersen-Gott

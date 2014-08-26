@@ -20,25 +20,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Named;
+
 import org.agorava.yammer.UserService;
+import org.agorava.yammer.Yammer;
+import org.agorava.yammer.YammerBaseService;
+import org.agorava.yammer.model.UserInfo;
 import org.agorava.yammer.model.YammerProfile;
 import org.agorava.yammer.model.YammerProfileList;
 
 /**
- * 
- * @author Morten Andersen-Gott
+ * Implementation of UserService
+ * @author Werner Keil
  *
  */
-public class UserServiceImpl extends AbstractYammerOperations implements UserService{
-
-	private RestTemplate restTemplate;
+@Yammer
+@Named
+public class UserServiceImpl extends YammerBaseService implements UserService{
 	
-	/**
-	 * @param restTemplate
-	 */
-	public UserServiceImpl(RestTemplate restTemplate) {
-		this.restTemplate=restTemplate;
-	}
+	static final String GET_USER_PROFILE_URL = "users/current.json";
 	
 	public List<YammerProfile> getUsers(int page){
 		return getUsers(page, null, false, null);
@@ -72,7 +72,8 @@ public class UserServiceImpl extends AbstractYammerOperations implements UserSer
 	}
 	
 	public YammerProfile getUserProfile(){
-		return restTemplate.getForObject(buildUri("users/current.json"), YammerProfile.class);
+		return getService().get(buildAbsoluteUri(GET_USER_PROFILE_URL),  YammerProfile.class);
+//		return restTemplate.getForObject(buildUri("users/current.json"), YammerProfile.class);
 	}
 	
 	public YammerProfile getUserByEmail(String email){
@@ -85,5 +86,4 @@ public class UserServiceImpl extends AbstractYammerOperations implements UserSer
 		}
 		return profileList.get(0);
 	}
-	
 }

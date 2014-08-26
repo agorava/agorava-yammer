@@ -23,7 +23,6 @@ import javax.inject.Inject;
 
 /**
  * @author Werner Keil
- * @author Justin Wyer
  */
 public abstract class YammerBaseService extends ProviderApiService {
 

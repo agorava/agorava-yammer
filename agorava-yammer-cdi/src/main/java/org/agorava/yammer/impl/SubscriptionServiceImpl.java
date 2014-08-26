@@ -19,15 +19,16 @@ import java.net.URI;
 
 import org.springframework.social.ResourceNotFoundException;
 import org.agorava.yammer.SubscriptionService;
+import org.agorava.yammer.YammerBaseService;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author Morten Andersen-Gott
+ * @author Werner Keil
  *
  */
-public class SubscriptionServiceImpl extends AbstractYammerOperations implements SubscriptionService {
+public class SubscriptionServiceImpl extends YammerBaseService implements SubscriptionService {
 
 	private RestTemplate restTemplate;
 

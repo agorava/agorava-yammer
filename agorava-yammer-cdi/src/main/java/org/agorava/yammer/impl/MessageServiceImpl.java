@@ -16,16 +16,19 @@
 package org.agorava.yammer.impl;
 
 import org.agorava.yammer.MessageService;
+import org.agorava.yammer.YammerBaseService;
 import org.agorava.yammer.model.MessageInfo;
+import org.agorava.yammer.model.YammerPostDetails;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Morten Andersen-Gott
+ * @author Werner Keil
  *
  */
-public class MessageServiceImpl extends AbstractYammerOperations implements MessageService {
+public class MessageServiceImpl extends YammerBaseService implements MessageService {
 
 	private RestTemplate restTemplate;
 	
@@ -124,6 +127,12 @@ public class MessageServiceImpl extends AbstractYammerOperations implements Mess
 
 	public void delete(long messageId) {
 		restTemplate.delete(buildUri("messages/"+messageId)); //400 in case message does not exist
+	}
+
+	@Override
+	public MessageInfo postUpdate(String message, YammerPostDetails details) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,4 +1,4 @@
 agorava-yammer
 ==============
 
-Agorava module to connect to XING
+Agorava module to connect to Yammer

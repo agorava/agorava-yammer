@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.agorava.yammer.GroupService;
+import org.agorava.yammer.YammerBaseService;
 import org.agorava.yammer.model.Group;
 import org.agorava.yammer.model.GroupList;
 
@@ -27,10 +28,10 @@ import java.util.Map;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author Morten Andersen-Gott
+ * @author Werner Keil
  *
  */
-public class GroupServiceImpl extends AbstractYammerOperations implements GroupService {
+public class GroupServiceImpl extends YammerBaseService implements GroupService {
 
 	private RestTemplate restTemplate;
 

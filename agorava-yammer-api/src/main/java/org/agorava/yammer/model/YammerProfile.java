@@ -358,5 +358,10 @@ public class YammerProfile extends UserProfile {
 	public String getProfileImageUrl() {
 		return mugshotUrl;
 	}
+
+	@Override
+	public String getEmail() {
+		return String.valueOf(contact.eMails.get(0));
+	}
 	
 }

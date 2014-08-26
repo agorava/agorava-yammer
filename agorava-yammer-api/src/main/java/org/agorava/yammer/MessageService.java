@@ -22,6 +22,7 @@ import org.agorava.yammer.model.YammerPostDetails;
 /**
  * Service-API for all message related operations
  * @author Morten Andersen-Gott
+ * @author Werner Keil
  * 
  */
 public interface MessageService {
