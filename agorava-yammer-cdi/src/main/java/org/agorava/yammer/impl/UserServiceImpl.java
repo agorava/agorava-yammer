@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava
+ * Copyright 2014-2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public class UserServiceImpl extends YammerBaseService implements UserService{
 		if(letter!=null){
 			params.put("letter", String.valueOf(letter));
 		}
-		return restTemplate.getForObject(buildUri("users.json", params), YammerProfileList.class);
+		return getService().get(buildUri("users.json", params), YammerProfileList.class);
 	}
 
 	public YammerProfile getUser(long id){
@@ -63,8 +63,8 @@ public class UserServiceImpl extends YammerBaseService implements UserService{
 	}
 
     public YammerProfile getUser(String userId){
-		URI uri = buildUri("users/"+userId+".json");
-		return restTemplate.getForObject(uri, YammerProfile.class);
+		String uri = buildAbsoluteUri("users/"+userId+".json");
+		return getService().get(uri, YammerProfile.class);
 	}
 	
 	public void updateProfile(long userId, UserInfo userInfo){
