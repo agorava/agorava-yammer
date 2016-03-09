@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2016 Agorava.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package org.agorava.yammer.model;
 import java.util.List;
 
 import org.agorava.spi.UserProfile;
-
+import org.agorava.yammer.Yammer;
 
 
 /**
@@ -72,7 +72,7 @@ public class YammerProfile extends UserProfile {
 			long networkId,
 			String timezone
 			) {
-		super(String.valueOf(id));
+		super(String.valueOf(id), Yammer.class);
 		this.id = id;
 		this.mugshotUrl = mugshotUrl;
 		this.stats = stats;
@@ -362,6 +362,11 @@ public class YammerProfile extends UserProfile {
 	@Override
 	public String getEmail() {
 		return String.valueOf(contact.eMails.get(0));
+	}
+
+	@Override
+	public String getLoginName() {
+		return name;
 	}
 	
 }

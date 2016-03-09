@@ -25,8 +25,6 @@ import org.agorava.yammer.model.GroupList;
 
 import java.util.Map;
 
-import org.springframework.web.client.RestTemplate;
-
 /**
  * @author Werner Keil
  *
