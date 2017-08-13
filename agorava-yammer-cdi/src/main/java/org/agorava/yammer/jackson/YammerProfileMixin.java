@@ -56,8 +56,6 @@ abstract class YammerProfileMixin {
 			@JsonProperty("timezone") String timezone
 	){}
 	
-	
-	
 	@JsonIgnoreProperties(ignoreUnknown=true)
 	abstract static class ContactMixin {
 		@JsonCreator

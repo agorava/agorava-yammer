@@ -68,7 +68,7 @@ public class UserServiceImpl extends YammerBaseService implements UserService{
 	}
 	
 	public void updateProfile(long userId, UserInfo userInfo){
-		restTemplate.put(buildUri("users/"+String.valueOf(userId)+".json", userInfo.toParams()),null);
+		 getService().put(buildUri("users/"+String.valueOf(userId)+".json", userInfo.toParams()),null);
 	}
 	
 	public YammerProfile getUserProfile(){
@@ -77,13 +77,16 @@ public class UserServiceImpl extends YammerBaseService implements UserService{
 	}
 	
 	public YammerProfile getUserByEmail(String email){
-		URI uri = buildUri("users/by_email.json", "email", email);
-		YammerProfileList profileList = restTemplate.getForObject(uri, YammerProfileList.class);
+		String uri = buildUri("users/by_email.json", "email", email);
+		YammerProfileList profileList =  getService().get(uri, YammerProfileList.class);
 
+		if (profileList != null) {
 		//Yammer returns user inside a Json array element
-		if(CollectionUtils.isEmpty(profileList)){
-			return null;
+			if(profileList.isEmpty()){
+				return null;
+			}
+			return profileList.get(0);
 		}
-		return profileList.get(0);
+		return null;
 	}
 }
