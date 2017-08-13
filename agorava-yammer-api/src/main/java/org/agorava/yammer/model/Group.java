@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava.
+ * Copyright 2014, 2017 Agorava.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@ package org.agorava.yammer.model;
 
 import java.util.Date;
 
+import org.agorava.api.function.Nameable;
+
 /**
  * @author Werner Keil
  * @author Morten Andersen-Gott
@@ -24,8 +26,12 @@ import java.util.Date;
  * Represents a group on Yammer
  *
  */
-public class Group { //implements Nameable, LongIdentifiable {
+public class Group implements Nameable { //, LongIdentifiable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1034553987860965237L;
 	private final String privacy;
 	private final String webUrl;
 	private final GroupStats stats;
@@ -99,8 +105,6 @@ public class Group { //implements Nameable, LongIdentifiable {
         return stats.lastMessageAt;
     }
 
-	
-	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -111,8 +115,6 @@ public class Group { //implements Nameable, LongIdentifiable {
 				.append(name).append(", id=").append(id).append(", createdAt=").append(createdAt).append("]");
 		return builder.toString();
 	}
-
-
 
 	public static class GroupStats{
 		private final int updates;
